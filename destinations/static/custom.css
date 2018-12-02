@@ -1,0 +1,24 @@
+.spacing {
+	margin: 10px;
+	padding: 10px;
+}
+
+.circle {
+	background-color: blue;
+}
+
+.cloud {
+	background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/H8WuRINimqur8ud/sky-and-motion-of-the-clouds-timelapse-timelapse-videos-where-the-sun-shines-through-the-clouds-on-the-blue-sky-background-4k-high-speed-clouds-movement-timelapse_b5dny76__F0005.png");
+}
+
+.bottom {
+	margin-bottom: 20px;
+}
+
+.stars {
+	background-image: url("https://res.cloudinary.com/simpleview/image/upload/v1520961011/clients/newmexico/clayton_temp_header_alt_2bea8646-5eb5-43f9-9344-401f1479de23.jpg");
+}
+
+.buttons {
+	display: inline-block;
+}

@@ -2,8 +2,8 @@
 
 {% block title %}List{% endblock title %}
 
-{% block content %}
-<br>
+{% comment %}
+<!----{% block content %}
 <div class="row">
   {% for destination in destinations %}
   <a href="{% url 'destination-detail' destination.id %}">
@@ -13,4 +13,45 @@
   </a>
   {% endfor %}
 </div>
-{% endblock content %}
+{% endblock content %}---->
+{% endcomment %}
+
+<div class="card-group">
+	{% block content %}
+	<div class="row">
+		{% for destination in destinations %}
+		<div class="card spacing col-11 col-lg-5" style="width: 18rem;">
+		  <img class="card-img-top" src="{{destination.pretty_picture.url}}" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">{{destination.name}}</h5>
+		    <p class="card-text">{{destination.activities}}</p>
+
+				<p>
+				  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample-{{destination.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+				    Details
+				  </a>
+				  
+				</p>
+				<div class="collapse" id="collapseExample-{{destination.id}}">
+				  <div class="card card-body">
+				    <p>{{destination.description}}</p>
+				    <p> Best Season: <br>{{destination.optimal_visiting_season}}</p>
+				    	<div class="buttons">
+						    <a href="{% url 'destination-update' destination.id %}">
+						        <button class="btn btn-primary">Update</button>
+						    </a>
+						    <a href="{% url 'destination-delete' destination.id %}">
+						        <button class="btn btn-danger">Delete</button>
+						    </a>
+						</div>
+				  </div>
+				</div>
+
+
+		    <!-----<a href="{% url 'destination-detail' destination.id %}" class="btn btn-primary">More info</a>---->
+		  </div>
+		</div>
+		{% endfor %}
+	</div>
+	{% endblock content %}
+</div>
